@@ -1,8 +1,18 @@
-const Circle =({id, status} ) ⇒ {
-return(
-className="list">
-<li>id: {id} </li>
-<li>Types: {types} </li>)
-}
-export default Circle;
+import { useState } from "react";
 
+const Circle = ({ status }) => {
+  const [selected, setSelected] = useState(false);
+  const toggleSelected = () => {
+    setSelected(!selected);
+  };
+  return (
+    <>
+      <div
+        className={`circle${selected ? " on" : ""}`}
+        status={status}
+        onClick={toggleSelected}
+      ></div>
+    </>
+  );
+};
+export default Circle;
