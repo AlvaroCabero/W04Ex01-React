@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-import "./Circles.css";
+import "./Circles.js";
 
 function App() {
   const [color, setColor] = useState("grey");
@@ -17,7 +17,7 @@ function App() {
       <div className="circles-container">
         <header className="circles-container__header">CIRCULOS</header>
         {circulos.map((circulo) => (
-          <Circle key={circulo.id} />
+          <Circle key={circulo.id} classy="circle" />
         ))}
       </div>
     </>

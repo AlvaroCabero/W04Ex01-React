@@ -1,8 +1,10 @@
-const Circle =({id, status} ) ⇒ {
+const Circle =({key, classy, status} ) ⇒ {
 return(
-className="list">
-<li>id: {id} </li>
-<li>Types: {types} </li>)
-}
+    <>
+
+<div className={classy} key={key}> </div>
+
+</>
+)}
 export default Circle;
 
