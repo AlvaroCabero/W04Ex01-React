@@ -1,20 +1,28 @@
+import { useState } from "react";
 import "./App.css";
-import "./Circle.css";
-
-import Circle from "./Circle";
+import Button from "./Button";
+import Input from "./Input";
 
 function App() {
-  const circulos = [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+  const [number, setNumber] = useState(0);
+
+  const increment = () => {
+    if (number < 10) {
+      setNumber(number + 1);
+    }
+  };
+
+  const decrement = () => {
+    if (number > 0) {
+      setNumber(number - 1);
+    }
+  };
+
   return (
     <>
-      <div className="circles-container">
-        <header className="circles-container__header">
-          ooooOOOO---- CIRCULOS ----OOOOoooo
-        </header>
-        {circulos.map((circulo) => (
-          <Circle key={circulo.id} />
-        ))}
-      </div>
+      <Button text="-" actionOnClick={decrement} />
+      <Input number={number} />
+      <Button text="+" actionOnClick={increment} />
     </>
   );
 }
