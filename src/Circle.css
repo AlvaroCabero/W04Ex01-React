@@ -1,0 +1,9 @@
+.circle {
+  background-color: grey;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+.circle.on {
+  background-color: rgb(228, 169, 42);
+}
